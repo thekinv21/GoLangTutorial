@@ -138,15 +138,15 @@ With a constant value you get a compile error instead: `int8(300)` --> "constant
 
 ### 6.3 String ↔ number: the strconv package
 
-| Function                     | What it does              | Example                                        |
-| ---------------------------- | ------------------------- | ---------------------------------------------- |
-| `strconv.Itoa(i)`            | int → string              | `strconv.Itoa(20)` --> `"20"`                  |
-| `strconv.Atoi(s)`            | string → int              | `strconv.Atoi("123")` --> `123, nil`           |
-| `strconv.ParseInt(s, b, n)`  | string → int64 (base b)   | `strconv.ParseInt("ff", 16, 64)` --> `255`     |
-| `strconv.ParseFloat(s, n)`   | string → float64          | `strconv.ParseFloat("3.14", 64)` --> `3.14`    |
-| `strconv.ParseBool(s)`       | string → bool             | `strconv.ParseBool("true")` --> `true`         |
-| `strconv.FormatInt(i, b)`    | int64 → string (base b)   | `strconv.FormatInt(255, 2)` --> `"11111111"`   |
-| `strconv.FormatFloat(f, ...)`| float64 → string          | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
+| Function                      | What it does            | Example                                                 |
+| ----------------------------- | ----------------------- | ------------------------------------------------------- |
+| `strconv.Itoa(i)`             | int → string            | `strconv.Itoa(20)` --> `"20"`                           |
+| `strconv.Atoi(s)`             | string → int            | `strconv.Atoi("123")` --> `123, nil`                    |
+| `strconv.ParseInt(s, b, n)`   | string → int64 (base b) | `strconv.ParseInt("ff", 16, 64)` --> `255`              |
+| `strconv.ParseFloat(s, n)`    | string → float64        | `strconv.ParseFloat("3.14", 64)` --> `3.14`             |
+| `strconv.ParseBool(s)`        | string → bool           | `strconv.ParseBool("true")` --> `true`                  |
+| `strconv.FormatInt(i, b)`     | int64 → string (base b) | `strconv.FormatInt(255, 2)` --> `"11111111"`            |
+| `strconv.FormatFloat(f, ...)` | float64 → string        | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
 
 `Parse...` and `Atoi` always return an error as well, don't forget to check it:
 
@@ -201,13 +201,13 @@ var cf float64 = c --> 10 // no conversion needed
 
 ### Summary
 
-| Conversion            | How                                 |
-| --------------------- | ----------------------------------- |
-| number → number       | `float64(x)`, `int(x)`, `int64(x)`  |
-| number → string       | `strconv.Itoa`, `strconv.FormatInt` |
-| string → number       | `strconv.Atoi`, `strconv.ParseInt`  |
-| string → bool         | `strconv.ParseBool`                 |
-| string ↔ byte / rune  | `[]byte(s)`, `[]rune(s)`, `string(b)` |
+| Conversion           | How                                   |
+| -------------------- | ------------------------------------- |
+| number → number      | `float64(x)`, `int(x)`, `int64(x)`    |
+| number → string      | `strconv.Itoa`, `strconv.FormatInt`   |
+| string → number      | `strconv.Atoi`, `strconv.ParseInt`    |
+| string → bool        | `strconv.ParseBool`                   |
+| string ↔ byte / rune | `[]byte(s)`, `[]rune(s)`, `string(b)` |
 
 ## 7. Constants: const
 
@@ -264,6 +264,22 @@ var Version string = "v1" // can be used both inside and outside the package
 
 var newVersion string = "v2" // can only be used inside the package, not accessible from outside
 ```
+
+## Go Format Verbs
+
+| Verb   | Type                      | Example Code                | Output                        |
+| ------ | ------------------------- | --------------------------- | ----------------------------- |
+| `%s`   | string                    | `fmt.Printf("%s", "Hello")` | `Hello`                       |
+| `%q`   | string (quoted)           | `fmt.Printf("%q", "Hello")` | `"Hello"`                     |
+| `%d`   | int                       | `fmt.Printf("%d", 42)`      | `42`                          |
+| `%f`   | float                     | `fmt.Printf("%f", 19.99)`   | `19.990000`                   |
+| `%.2f` | float (2 decimals)        | `fmt.Printf("%.2f", 19.99)` | `19.99`                       |
+| `%t`   | bool                      | `fmt.Printf("%t", true)`    | `true`                        |
+| `%v`   | any type                  | `fmt.Printf("%v", 42)`      | `42`                          |
+| `%+v`  | struct (with field names) | `fmt.Printf("%+v", u)`      | `{Name:Ali Age:30}`           |
+| `%T`   | type of the value         | `fmt.Printf("%T", 3.14)`    | `float64`                     |
+| `%%`   | percent sign              | `fmt.Printf("%%")`          | `%`                           |
+| `\n`   | new line                  | `fmt.Printf("a\nb")`        | `a` and `b` on separate lines |
 
 ## Quick Summary
 

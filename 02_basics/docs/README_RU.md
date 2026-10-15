@@ -138,15 +138,15 @@ uint8(neg) --> 255 // uint8 не может быть отрицательным
 
 ### 6.3 Строка ↔ число: пакет strconv
 
-| Функция                      | Что делает                    | Пример                                         |
-| ---------------------------- | ----------------------------- | ---------------------------------------------- |
-| `strconv.Itoa(i)`            | int → string                  | `strconv.Itoa(20)` --> `"20"`                  |
-| `strconv.Atoi(s)`            | string → int                  | `strconv.Atoi("123")` --> `123, nil`           |
-| `strconv.ParseInt(s, b, n)`  | string → int64 (основание b)  | `strconv.ParseInt("ff", 16, 64)` --> `255`     |
-| `strconv.ParseFloat(s, n)`   | string → float64              | `strconv.ParseFloat("3.14", 64)` --> `3.14`    |
-| `strconv.ParseBool(s)`       | string → bool                 | `strconv.ParseBool("true")` --> `true`         |
-| `strconv.FormatInt(i, b)`    | int64 → string (основание b)  | `strconv.FormatInt(255, 2)` --> `"11111111"`   |
-| `strconv.FormatFloat(f, ...)`| float64 → string              | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
+| Функция                       | Что делает                   | Пример                                                  |
+| ----------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `strconv.Itoa(i)`             | int → string                 | `strconv.Itoa(20)` --> `"20"`                           |
+| `strconv.Atoi(s)`             | string → int                 | `strconv.Atoi("123")` --> `123, nil`                    |
+| `strconv.ParseInt(s, b, n)`   | string → int64 (основание b) | `strconv.ParseInt("ff", 16, 64)` --> `255`              |
+| `strconv.ParseFloat(s, n)`    | string → float64             | `strconv.ParseFloat("3.14", 64)` --> `3.14`             |
+| `strconv.ParseBool(s)`        | string → bool                | `strconv.ParseBool("true")` --> `true`                  |
+| `strconv.FormatInt(i, b)`     | int64 → string (основание b) | `strconv.FormatInt(255, 2)` --> `"11111111"`            |
+| `strconv.FormatFloat(f, ...)` | float64 → string             | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
 
 `Parse...` и `Atoi` всегда возвращают ещё и ошибку, не забывайте её проверять:
 
@@ -201,13 +201,13 @@ var cf float64 = c --> 10 // преобразование не понадоби�
 
 ### Итог
 
-| Преобразование        | Как сделать                         |
-| --------------------- | ----------------------------------- |
-| число → число         | `float64(x)`, `int(x)`, `int64(x)`  |
-| число → строка        | `strconv.Itoa`, `strconv.FormatInt` |
-| строка → число        | `strconv.Atoi`, `strconv.ParseInt`  |
-| строка → bool         | `strconv.ParseBool`                 |
-| строка ↔ byte / rune  | `[]byte(s)`, `[]rune(s)`, `string(b)` |
+| Преобразование       | Как сделать                           |
+| -------------------- | ------------------------------------- |
+| число → число        | `float64(x)`, `int(x)`, `int64(x)`    |
+| число → строка       | `strconv.Itoa`, `strconv.FormatInt`   |
+| строка → число       | `strconv.Atoi`, `strconv.ParseInt`    |
+| строка → bool        | `strconv.ParseBool`                   |
+| строка ↔ byte / rune | `[]byte(s)`, `[]rune(s)`, `string(b)` |
 
 ## 7. Константы: const
 
@@ -264,6 +264,22 @@ var Version string = "v1" // можно использовать как внут
 
 var newVersion string = "v2" // можно использовать только внутри пакета, снаружи недоступна
 ```
+
+## Спецификаторы формата в Go
+
+| Спецификатор | Тип                           | Пример кода                 | Вывод                       |
+| ------------ | ----------------------------- | --------------------------- | --------------------------- |
+| `%s`         | string                        | `fmt.Printf("%s", "Hello")` | `Hello`                     |
+| `%q`         | string (в кавычках)           | `fmt.Printf("%q", "Hello")` | `"Hello"`                   |
+| `%d`         | int                           | `fmt.Printf("%d", 42)`      | `42`                        |
+| `%f`         | float                         | `fmt.Printf("%f", 19.99)`   | `19.990000`                 |
+| `%.2f`       | float (2 знака после запятой) | `fmt.Printf("%.2f", 19.99)` | `19.99`                     |
+| `%t`         | bool                          | `fmt.Printf("%t", true)`    | `true`                      |
+| `%v`         | любой тип                     | `fmt.Printf("%v", 42)`      | `42`                        |
+| `%+v`        | struct (с именами полей)      | `fmt.Printf("%+v", u)`      | `{Name:Ali Age:30}`         |
+| `%T`         | тип значения                  | `fmt.Printf("%T", 3.14)`    | `float64`                   |
+| `%%`         | знак процента                 | `fmt.Printf("%%")`          | `%`                         |
+| `\n`         | новая строка                  | `fmt.Printf("a\nb")`        | `a` и `b` на разных строках |
 
 ## Краткое резюме
 

@@ -138,15 +138,15 @@ Sabit (const) bir değerle yapılırsa derleme hatası alırsınız: `int8(300)`
 
 ### 6.3 String ↔ sayı: strconv paketi
 
-| Fonksiyon                    | Ne yapar                 | Örnek                                          |
-| ---------------------------- | ------------------------ | ---------------------------------------------- |
-| `strconv.Itoa(i)`            | int → string             | `strconv.Itoa(20)` --> `"20"`                  |
-| `strconv.Atoi(s)`            | string → int             | `strconv.Atoi("123")` --> `123, nil`           |
-| `strconv.ParseInt(s, b, n)`  | string → int64 (taban b) | `strconv.ParseInt("ff", 16, 64)` --> `255`     |
-| `strconv.ParseFloat(s, n)`   | string → float64         | `strconv.ParseFloat("3.14", 64)` --> `3.14`    |
-| `strconv.ParseBool(s)`       | string → bool            | `strconv.ParseBool("true")` --> `true`         |
-| `strconv.FormatInt(i, b)`    | int64 → string (taban b) | `strconv.FormatInt(255, 2)` --> `"11111111"`   |
-| `strconv.FormatFloat(f, ...)`| float64 → string         | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
+| Fonksiyon                     | Ne yapar                 | Örnek                                                   |
+| ----------------------------- | ------------------------ | ------------------------------------------------------- |
+| `strconv.Itoa(i)`             | int → string             | `strconv.Itoa(20)` --> `"20"`                           |
+| `strconv.Atoi(s)`             | string → int             | `strconv.Atoi("123")` --> `123, nil`                    |
+| `strconv.ParseInt(s, b, n)`   | string → int64 (taban b) | `strconv.ParseInt("ff", 16, 64)` --> `255`              |
+| `strconv.ParseFloat(s, n)`    | string → float64         | `strconv.ParseFloat("3.14", 64)` --> `3.14`             |
+| `strconv.ParseBool(s)`        | string → bool            | `strconv.ParseBool("true")` --> `true`                  |
+| `strconv.FormatInt(i, b)`     | int64 → string (taban b) | `strconv.FormatInt(255, 2)` --> `"11111111"`            |
+| `strconv.FormatFloat(f, ...)` | float64 → string         | `strconv.FormatFloat(3.14159, 'f', 2, 64)` --> `"3.14"` |
 
 `Parse...` ve `Atoi` fonksiyonları her zaman hata da döndürür, kontrol etmeyi unutmayın:
 
@@ -201,13 +201,13 @@ var cf float64 = c --> 10 // dönüşüm gerekmedi
 
 ### Özet
 
-| Dönüşüm               | Nasıl yapılır                       |
-| --------------------- | ----------------------------------- |
-| sayı → sayı           | `float64(x)`, `int(x)`, `int64(x)`  |
-| sayı → string         | `strconv.Itoa`, `strconv.FormatInt` |
-| string → sayı         | `strconv.Atoi`, `strconv.ParseInt`  |
-| string → bool         | `strconv.ParseBool`                 |
-| string ↔ byte / rune  | `[]byte(s)`, `[]rune(s)`, `string(b)` |
+| Dönüşüm              | Nasıl yapılır                         |
+| -------------------- | ------------------------------------- |
+| sayı → sayı          | `float64(x)`, `int(x)`, `int64(x)`    |
+| sayı → string        | `strconv.Itoa`, `strconv.FormatInt`   |
+| string → sayı        | `strconv.Atoi`, `strconv.ParseInt`    |
+| string → bool        | `strconv.ParseBool`                   |
+| string ↔ byte / rune | `[]byte(s)`, `[]rune(s)`, `string(b)` |
 
 ## 7. Sabitler: const
 
@@ -264,6 +264,22 @@ var Version string = "v1" // paket içinde ve dışında da kullanılabilir
 
 var newVersion string = "v2" // sadece paket içinde kullanılabilir, dışarıdaki erişemez
 ```
+
+## Go Format Belirteçleri
+
+| Belirteç | Tip                     | Örnek Kod                   | Çıktı                   |
+| -------- | ----------------------- | --------------------------- | ----------------------- |
+| `%s`     | string                  | `fmt.Printf("%s", "Hello")` | `Hello`                 |
+| `%q`     | string (tırnaklı)       | `fmt.Printf("%q", "Hello")` | `"Hello"`               |
+| `%d`     | int                     | `fmt.Printf("%d", 42)`      | `42`                    |
+| `%f`     | float                   | `fmt.Printf("%f", 19.99)`   | `19.990000`             |
+| `%.2f`   | float (2 basamak)       | `fmt.Printf("%.2f", 19.99)` | `19.99`                 |
+| `%t`     | bool                    | `fmt.Printf("%t", true)`    | `true`                  |
+| `%v`     | herhangi bir tip        | `fmt.Printf("%v", 42)`      | `42`                    |
+| `%+v`    | struct (alan adlarıyla) | `fmt.Printf("%+v", u)`      | `{Name:Ali Age:30}`     |
+| `%T`     | değişkenin tipi         | `fmt.Printf("%T", 3.14)`    | `float64`               |
+| `%%`     | yüzde işareti           | `fmt.Printf("%%")`          | `%`                     |
+| `\n`     | yeni satır              | `fmt.Printf("a\nb")`        | `a` ve `b` ayrı satırda |
 
 ## Kısaca Özet
 
