@@ -1,16 +1,16 @@
-🌐 [English](./ROADMAP_EN.md) | **Türkçe** | [Русский](./ROADMAP_RU.md)
+[English](./ROADMAP_EN.md) | **Turkish** | [Russian](./ROADMAP_RU.md)
 
 # Go (Golang) Öğrenme Yol Haritası
 
 ## Aşama 0 — Kurulum ve Giriş
 
 - [x] Go nedir? ([README_TR.md](../01_installation/docs/README_TR.md))
-- [ ] Go kurulumu
-- [ ] VS Code + Go eklentisi
-- [ ] İlk program: `Hello, World!`
-- [ ] `go run`, `go build`, `go fmt`, `go vet`
-- [ ] `go mod init` ve `go.mod`
-- [ ] `package main` ve `func main()`
+- [x] Go kurulumu
+- [x] VS Code + Go eklentisi
+- [x] İlk program: `Hello, World!`
+- [x] `go run`, `go build`, `go fmt`, `go vet`
+- [x] `go mod init` ve `go.mod`
+- [x] `package main` ve `func main()`
 
 **Alıştırmalar:**
 
@@ -19,10 +19,10 @@
 
 ## Aşama 1 — Temeller
 
-- [ ] Değişkenler
-- [ ] Sabitler
-- [ ] Temel tipler
-- [ ] Tip dönüşümü
+- [x] Değişkenler ([README_TR.md](../02_basics/docs/README_TR.md))
+- [x] Sabitler
+- [x] Temel tipler
+- [x] Tip dönüşümü
 - [ ] Operatörler
 - [ ] `fmt` paketi
 - [ ] Kullanıcıdan girdi alma

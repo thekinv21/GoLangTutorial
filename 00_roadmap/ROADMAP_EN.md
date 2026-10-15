@@ -1,16 +1,16 @@
-🌐 **English** | [Türkçe](./ROADMAP_TR.md) | [Русский](./ROADMAP_RU.md)
+**English** | [Turkish](./ROADMAP_TR.md) | [Russian](./ROADMAP_RU.md)
 
 # Go (Golang) Learning Roadmap
 
 ## Stage 0 — Installation and Introduction
 
 - [x] What is Go? ([README_EN.md](../01_installation/docs/README_EN.md))
-- [ ] Installing Go
-- [ ] VS Code + Go extension
-- [ ] First program: `Hello, World!`
-- [ ] `go run`, `go build`, `go fmt`, `go vet`
-- [ ] `go mod init` and `go.mod`
-- [ ] `package main` and `func main()`
+- [x] Installing Go
+- [x] VS Code + Go extension
+- [x] First program: `Hello, World!`
+- [x] `go run`, `go build`, `go fmt`, `go vet`
+- [x] `go mod init` and `go.mod`
+- [x] `package main` and `func main()`
 
 **Exercises:**
 
@@ -19,10 +19,10 @@
 
 ## Stage 1 — Basics
 
-- [ ] Variables
-- [ ] Constants
-- [ ] Basic types
-- [ ] Type conversion
+- [x] Variables ([README_EN.md](../02_basics/docs/README_EN.md))
+- [x] Constants
+- [x] Basic types
+- [x] Type conversion
 - [ ] Operators
 - [ ] The `fmt` package
 - [ ] Reading user input
