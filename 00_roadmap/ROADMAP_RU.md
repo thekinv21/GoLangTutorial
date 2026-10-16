@@ -19,12 +19,12 @@
 
 ## Этап 1 — Основы
 
-- [x] Переменные ([README_RU.md](../02_basics/docs/README_RU.md))
-- [x] Константы
-- [x] Базовые типы
-- [x] Преобразование типов
+- [x] Переменные ([README_RU.md](../02_basics/01-variables/docs/README_RU.md))
+- [x] Константы ([README_RU.md](../02_basics/04-constants/docs/README_RU.md))
+- [x] Базовые типы ([README_RU.md](../02_basics/02-data-types/docs/README_RU.md))
+- [x] Преобразование типов ([README_RU.md](../02_basics/03-type-conversion/docs/README_RU.md))
 - [ ] Операторы
-- [ ] Пакет `fmt`
+- [ ] Пакет `fmt` ([README_RU.md](../02_basics/05-format-verbs/docs/README_RU.md))
 - [ ] Ввод данных от пользователя
 - [ ] Условия: `if / else`, `switch`
 - [ ] Циклы: `for`

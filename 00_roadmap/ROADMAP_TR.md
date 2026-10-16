@@ -19,12 +19,12 @@
 
 ## Aşama 1 — Temeller
 
-- [x] Değişkenler ([README_TR.md](../02_basics/docs/README_TR.md))
-- [x] Sabitler
-- [x] Temel tipler
-- [x] Tip dönüşümü
+- [x] Değişkenler ([README_TR.md](../02_basics/01-variables/docs/README_TR.md))
+- [x] Sabitler ([README_TR.md](../02_basics/04-constants/docs/README_TR.md))
+- [x] Temel tipler ([README_TR.md](../02_basics/02-data-types/docs/README_TR.md))
+- [x] Tip dönüşümü ([README_TR.md](../02_basics/03-type-conversion/docs/README_TR.md))
 - [ ] Operatörler
-- [ ] `fmt` paketi
+- [ ] `fmt` paketi ([README_TR.md](../02_basics/05-format-verbs/docs/README_TR.md))
 - [ ] Kullanıcıdan girdi alma
 - [ ] Koşullar: `if / else`, `switch`
 - [ ] Döngüler: `for`

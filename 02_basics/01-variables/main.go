@@ -5,6 +5,10 @@ import (
 	"strconv"
 )
 
+// Paket seviyesinde := kullanılamaz, var kullanılmalı
+var Version string = "v1"    // büyük harf: paket dışından erişilebilir (exported)
+var newVersion string = "v2" // küçük harf: sadece paket içinden erişilebilir (unexported)
+
 func main() {
 
 	//! Var ile değişken tanımlama örnekleri
@@ -60,49 +64,32 @@ func main() {
 
 	fmt.Printf("User: %s\nPort: %d\nDebug: %t\n", user, port, debug)
 
-	//! Tip dönüştürmeler ile ilgili konular
+	//! Değer takası tek satırda yapılabilir
 
-	// NOT:
-	// - Parse... ve strconv.Atoi hata fırlatıyor
+	a, b = b, a
 
-	var myNum string = "123"
-	var myString string = "abc"
-	var myNumber int = 435
+	fmt.Printf("Takas sonrası A: %d, B: %d\n", a, b)
 
-	var integerNum int = 343
+	//! _ (blank identifier) ile değeri bilerek yok sayma
 
-	convertedMyNum, err := strconv.Atoi(myNum)
-	convertedMyNumber := strconv.Itoa(myNumber)
-
-	convertedToFloatNumber := float64(integerNum)
+	_, err := strconv.Atoi("123")
 
 	if err != nil {
-		fmt.Println("Error when converting value:", err)
-		return
+		fmt.Println("Error:", err)
 	}
 
-	fmt.Printf(
-		"Converted Value: %d\nMyString: %q\nConverted to String Value: %s\nconvertedToFloatNumber: %.2f\n", convertedMyNum, myString, convertedMyNumber, convertedToFloatNumber)
+	//! Gölgeleme (shadowing)
 
-	//! Ekrana yazdırma konuları:
+	x := 1
 
-	// %s ---> string için kullanılıyor
+	if true {
+		x := 2 // yeni bir x, dıştakini etkilemez
+		fmt.Println("İç blok x:", x)
+	}
 
-	// %d ---> integer için kullanılıyor
+	fmt.Println("Dış blok x:", x)
 
-	// %f ---> float için kullanılır
-
-	// %.2f ---> float için kullanılıyor yani sadece 2 basamak gösterilsin istersek nokta sonrası
-
-	// %t ---> bool değerleri için kullanılıyor
-
-	// %v ---> herhangi bir tip için kullanılıyor
-
-	// %+v ---> struct alanlar için kullanılıyor yani objeler için
-
-	// %T ---> verinin tipini öğrenmek için kullanılabilir
-
-	// %% ---> % işareti için
+	fmt.Println("Version:", Version, "newVersion:", newVersion)
 
 	//NOT:
 
