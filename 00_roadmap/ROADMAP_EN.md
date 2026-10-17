@@ -23,8 +23,8 @@
 - [x] Constants ([README_EN.md](../02_basics/04-constants/docs/README_EN.md))
 - [x] Basic types ([README_EN.md](../02_basics/02-data-types/docs/README_EN.md))
 - [x] Type conversion ([README_EN.md](../02_basics/03-type-conversion/docs/README_EN.md))
-- [ ] Operators
-- [ ] The `fmt` package ([README_EN.md](../02_basics/05-format-verbs/docs/README_EN.md))
+- [x] Operators ([README_EN.md](../02_basics/06-operators/docs/README_EN.md))
+- [x] The `fmt` package ([README_EN.md](../02_basics/07-fmt-package/docs/README_EN.md))
 - [ ] Reading user input
 - [ ] Conditions: `if / else`, `switch`
 - [ ] Loops: `for`
